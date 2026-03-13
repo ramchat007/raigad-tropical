@@ -1,0 +1,603 @@
+/* =========================
+RAIGAD TROPICAL THEME STYLES
+========================= */
+
+/* COLOR VARIABLES */
+
+:root {
+
+--stone-grey:#5C5A57;
+--earth-brown:#3B2F2F;
+--tropical-green:#2F6B3C;
+--saffron:#FF7A00;
+--gold:#C8A45B;
+--sand:#E9E1D3;
+
+}
+
+
+
+/* =========================
+GLOBAL STYLES
+========================= */
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff;
+color:#333;
+}
+
+section{
+position:relative;
+z-index:1;
+}
+
+section{
+padding-top:120px;
+padding-bottom:120px;
+}
+
+/* =========================
+HEADER STYLING
+========================= */
+
+#header{
+
+transition:all 0.4s ease;
+
+}
+
+#header.scrolled{
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+
+
+/* =========================
+HERO SECTION
+========================= */
+
+.hero-video{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+#home video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+#home h1{
+
+letter-spacing:2px;
+
+}
+
+#home p{
+
+opacity:0.9;
+
+}
+
+#mobileNav{
+transition:all 0.3s ease;
+}
+#mobileMenu{
+transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+}
+#header{
+z-index:9999;
+}
+
+
+
+/* =========================
+BUTTON EFFECTS
+========================= */
+
+a{
+
+transition:all 0.3s ease;
+
+}
+
+button:hover,
+.btn:hover{
+transform:translateY(-2px);
+}
+
+
+
+/* =========================
+CARD STYLES
+========================= */
+
+.card{
+
+border-radius:12px;
+
+overflow:hidden;
+
+background:#fff;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+transition:all 0.3s ease;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px) scale(1.01);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* =========================
+GALLERY IMAGE EFFECT
+========================= */
+
+#gallery img{
+
+transition:all 0.4s ease;
+
+cursor:pointer;
+
+}
+
+#gallery img:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+/* =========================
+FORT STYLE SECTION DIVIDER
+========================= */
+
+.fort-divider{
+
+width:100%;
+
+height:40px;
+
+background:#000;
+
+clip-path:polygon(
+0% 100%,
+5% 60%,
+10% 100%,
+15% 60%,
+20% 100%,
+25% 60%,
+30% 100%,
+35% 60%,
+40% 100%,
+45% 60%,
+50% 100%,
+55% 60%,
+60% 100%,
+65% 60%,
+70% 100%,
+75% 60%,
+80% 100%,
+85% 60%,
+90% 100%,
+95% 60%,
+100% 100%
+);
+
+}
+
+
+
+/* =========================
+CONTACT FORM
+========================= */
+
+input, textarea{
+
+border:1px solid #ddd;
+
+transition:all 0.3s ease;
+
+}
+
+input:focus, textarea:focus{
+
+outline:none;
+
+border-color:var(--saffron);
+
+box-shadow:0 0 0 2px rgba(255,122,0,0.2);
+
+}
+
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+background:#000;
+
+color:#fff;
+
+}
+
+footer p{
+
+opacity:0.7;
+
+}
+
+
+
+/* =========================
+SCROLL INDICATOR
+========================= */
+
+.scroll-indicator{
+position:absolute;
+bottom:50px;
+left:50%;
+transform:translateX(-50%);
+animation:scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce{
+0%{transform:translate(-50%,0)}
+50%{transform:translate(-50%,10px)}
+100%{transform:translate(-50%,0)}
+}
+
+
+
+/* =========================
+ANIMATION UTILITIES
+========================= */
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+.fade-in{
+
+opacity:0;
+
+}
+
+.scale-in{
+
+opacity:0;
+
+transform:scale(0.9);
+
+}
+
+
+
+/* =========================
+RESPONSIVE TWEAKS
+========================= */
+
+@media(max-width:768px){
+
+#home h1{
+
+font-size:42px;
+
+}
+
+#home p{
+
+font-size:18px;
+
+}
+
+}
+
+/* =========================
+FORT GATE INTRO
+========================= */
+
+#fortIntro{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+z-index:9999;
+display:flex;
+pointer-events:none;
+
+}
+
+/* Gate Panels */
+
+.gate{
+
+width:50%;
+height:100%;
+background:#3B2F2F;
+background-image:url("https://placehold.co/1000x1200");
+background-size:cover;
+background-position:center;
+box-shadow:inset 0 0 60px rgba(0,0,0,0.8);
+
+}
+
+/* Left Gate */
+
+.gate-left{
+
+border-right:4px solid #2a1f1f;
+
+}
+
+/* Right Gate */
+
+.gate-right{
+
+border-left:4px solid #2a1f1f;
+
+}
+
+/* Title in middle */
+
+.gate-title{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-family:'Cinzel',serif;
+font-size:48px;
+color:#fff;
+letter-spacing:3px;
+text-align:center;
+opacity:0.9;
+
+}
+
+.hero-fog{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:200px;
+background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);
+pointer-events:none;
+}
+
+#lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.lightbox-image{
+max-width:90%;
+max-height:80%;
+border-radius:10px;
+transition:transform 0.4s ease, opacity 0.4s ease;
+}
+
+.lightbox-close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+.lightbox-nav span{
+position:absolute;
+top:50%;
+font-size:50px;
+color:white;
+cursor:pointer;
+user-select:none;
+}
+
+.lightbox-prev{
+left:40px;
+}
+
+.lightbox-next{
+right:40px;
+}
+
+.gallery-img{
+cursor:pointer;
+transition:transform 0.3s ease;
+}
+
+.gallery-img:hover{
+transform:scale(1.05);
+}
+
+.gallery-masonry{
+column-count:4;
+column-gap:16px;
+}
+
+.gallery-masonry img{
+width:100%;
+display:block;
+margin-bottom:16px;
+border-radius:10px;
+break-inside:avoid;
+cursor:pointer;
+transition:transform 0.3s ease;
+aspect-ratio:4/3;
+object-fit:cover;
+}
+
+.gallery-masonry img:hover{
+transform:scale(1.06);
+filter:brightness(1.05);
+}
+
+@media(max-width:1024px){
+
+.gallery-masonry{
+column-count:3;
+}
+
+}
+
+@media(max-width:768px){
+
+.gallery-masonry{
+column-count:2;
+column-gap:12px;
+}
+
+.gallery-masonry img{
+margin-bottom:12px;
+}
+
+
+}
+
+@media(max-width:480px){
+
+.gallery-masonry{
+column-count:1;
+}
+
+}
+
+.whatsapp-btn{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+z-index:999;
+transition:all 0.3s ease;
+}
+
+.whatsapp-btn:hover{
+transform:scale(1.08);
+}
+.bg-stone-100{background-color: #fff;}
+
+.journey-section{
+position:relative;
+}
+
+.journey-image{
+position:sticky;
+top:0;
+height:100vh;
+overflow:hidden;
+}
+
+.journey-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.journey-content{
+position:relative;
+}
+
+.journey-step{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.journey-step h2{
+color:white;
+font-size:48px;
+opacity:0;
+transform:translateY(40px);
+}
+
+.hover\:text-brand-gold:hover{
+    --tw-text-opacity: 1;
+    color: rgb(197 160 89 / var(--tw-text-opacity, 1));
+}
+.hover\:after\:w-full:hover::after {
+    content: var(--tw-content);
+    width: 100%;
+}
+.after\:content-\[\'\'\]::after {
+    --tw-content: '';
+    content: var(--tw-content);
+}
+.after\:transition-all::after {
+    content: var(--tw-content);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+.after\:bg-brand-gold::after {
+    content: var(--tw-content);
+    --tw-bg-opacity: 1;
+    background-color: rgb(197 160 89 / var(--tw-bg-opacity, 1));
+}
+.bg-brand-gold {
+    --tw-bg-opacity: 1;
+    background-color: rgb(197 160 89 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-brand-dark:hover {
+    --tw-text-opacity: 1;
+    color: rgb(26 26 26 / var(--tw-text-opacity, 1));
+}
+.hover\:bg-white:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.text-brand-gold {
+    --tw-text-opacity: 1;
+    color: rgb(197 160 89 / var(--tw-text-opacity, 1));
+}
+.border-brand-gold {
+    --tw-border-opacity: 1;
+    border-color: rgb(197 160 89 / var(--tw-border-opacity, 1));
+}
