@@ -1,15 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XJF0P08TDD"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      gtag("config", "G-XJF0P08TDD");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Raigad Tropical</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Raigad Tropical | Luxury Eco-Resort in the Sahyadri Mountains</title>
+    <meta
+      name="description"
+      content="Escape to Raigad Tropical. Experience heritage architecture, luxury glamping, and authentic Maharashtrian cuisine near the historic Raigad Fort."
+    />
+    <meta
+      name="keywords"
+      content="Raigad resort, Sahyadri stay, luxury cottages Raigad, weekend getaway near Mumbai, eco resort Maharashtra"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.raigadtropical.in/" />
+    <meta
+      property="og:title"
+      content="Raigad Tropical | Nature Meets Heritage"
+    />
+    <meta
+      property="og:description"
+      content="Book your peaceful retreat in the heart of the Sahyadri mountains."
+    />
+    <meta
+      property="og:image"
+      content="https://www.raigadtropical.in/assets/images/og-image.jpg"
+    />
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,393 +65,404 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="preload" as="video" href="assets/video/video1.mp4">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="preload" as="video" href="assets/video/video1.mp4" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .heading-font {
-            font-family: 'Cinzel', serif;
-        }
-    </style>
-
-</head>
-
-<body class="bg-stone-100 text-gray-800">
-
+  <body class="bg-stone-100 text-gray-800">
     <!-- FORT GATE INTRO -->
     <div id="fortIntro">
+      <div class="gate gate-left"></div>
 
-        <div class="gate gate-left"></div>
-
-        <div class="gate gate-right"></div>
-        <!-- 
+      <div class="gate gate-right"></div>
+      <!-- 
         <div class="gate-title">
             Raigad Tropical
         </div> -->
-
     </div>
 
     <!-- HEADER -->
-    <header id="header"
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 border-b border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="#home" class="group">
+          <div class="text-2xl font-bold heading-font text-white">
+            <img
+              src="./assets/images/raigad-logo.png"
+              width="100px"
+              alt="Raigad Tropical eco resort view"
+              loading="lazy"
+            />
+          </div>
+        </a>
 
-            <a href="#home" class="group">
-                <div class="text-2xl font-bold heading-font text-white">
-                    <img src="./assets/images/raigad-logo.png" width="100px" alt="Raigad Tropical eco resort view"
-                        loading="lazy">
-                </div>
-            </a>
+        <nav
+          class="hidden md:flex items-center space-x-12 font-light tracking-wide text-sm uppercase"
+        >
+          <a
+            class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
+            href="#services"
+            >Services</a
+          >
+          <a
+            class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
+            href="#accommodation"
+            >Accommodation</a
+          >
+          <a
+            class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
+            href="#gallery"
+            >Gallery</a
+          >
 
-            <nav class="hidden md:flex items-center space-x-12 font-light tracking-wide text-sm uppercase">
-                <a class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
-                    href="#home">Home</a>
-                <a class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
-                    href="#about">About</a>
-                <a class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
-                    href="#services">Services</a>
-                <a class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
-                    href="#accommodation">Accommodation</a>
-                <a class="text-white hover:text-brand-gold transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all hover:after:w-full"
-                    href="#gallery">Gallery</a>
+          <a
+            href="#contact"
+            class="bg-brand-gold hover:bg-white hover:text-brand-dark text-white px-8 py-3 transition duration-300 tracking-wider font-semibold text-xs"
+          >
+            RESERVE STAY
+          </a>
+        </nav>
 
-                <a href="#contact"
-                    class="bg-brand-gold hover:bg-white hover:text-brand-dark text-white px-8 py-3 transition duration-300 tracking-wider font-semibold text-xs">
-                    RESERVE STAY
-                </a>
-            </nav>
+        <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+          <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+      </div>
 
-            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
-        </div>
-
-        <div id="mobileMenu"
-            class="fixed inset-0 bg-black/95 backdrop-blur-lg z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8">
-            <button id="closeMenuBtn" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
-            <a class="text-white text-2xl font-serif hover:text-brand-gold" href="#home" onclick="closeMenu()">Home</a>
-            <a class="text-white text-2xl font-serif hover:text-brand-gold" href="#about"
-                onclick="closeMenu()">About</a>
-            <a class="text-white text-2xl font-serif hover:text-brand-gold" href="#services"
-                onclick="closeMenu()">Services</a>
-            <a class="text-white text-2xl font-serif hover:text-brand-gold" href="#accommodation"
-                onclick="closeMenu()">Accommodation</a>
-            <a class="text-white text-2xl font-serif hover:text-brand-gold" href="#gallery"
-                onclick="closeMenu()">Gallery</a>
-            <a class="text-white text-2xl font-serif hover:text-brand-gold" href="#contact"
-                onclick="closeMenu()">Contact</a>
-            <a href="https://wa.me/919999999999"
-                class="border border-brand-gold text-brand-gold px-8 py-3 mt-4 uppercase tracking-widest">
-                Book via WhatsApp
-            </a>
-        </div>
+      <div
+        id="mobileMenu"
+        class="fixed inset-0 bg-black/95 backdrop-blur-lg z-40 transform translate-x-full transition-transform duration-500 flex flex-col justify-center items-center space-y-8"
+      >
+        <button
+          id="closeMenuBtn"
+          class="absolute top-6 right-6 text-white text-4xl"
+        >
+          &times;
+        </button>
+        <a
+          class="text-white text-2xl font-serif hover:text-brand-gold"
+          href="#home"
+          onclick="closeMenu()"
+          >Home</a
+        >
+        <a
+          class="text-white text-2xl font-serif hover:text-brand-gold"
+          href="#about"
+          onclick="closeMenu()"
+          >About</a
+        >
+        <a
+          class="text-white text-2xl font-serif hover:text-brand-gold"
+          href="#services"
+          onclick="closeMenu()"
+          >Services</a
+        >
+        <a
+          class="text-white text-2xl font-serif hover:text-brand-gold"
+          href="#accommodation"
+          onclick="closeMenu()"
+          >Accommodation</a
+        >
+        <a
+          class="text-white text-2xl font-serif hover:text-brand-gold"
+          href="#gallery"
+          onclick="closeMenu()"
+          >Gallery</a
+        >
+        <a
+          class="text-white text-2xl font-serif hover:text-brand-gold"
+          href="#contact"
+          onclick="closeMenu()"
+          >Contact</a
+        >
+        <a
+          href="https://wa.me/919999999999"
+          class="border border-brand-gold text-brand-gold px-8 py-3 mt-4 uppercase tracking-widest"
+        >
+          Book via WhatsApp
+        </a>
+      </div>
     </header>
     <!-- HERO SECTION -->
-    <section id="home" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+    >
+      <!-- Background Video -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute w-full h-full object-cover"
+      >
+        <source src="assets/video/video1.mp4" type="video/mp4" />
+      </video>
 
-        <!-- Background Video -->
-        <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+      <!-- Overlay -->
+      <div class="absolute w-full h-full bg-black/50"></div>
 
-            <source src="assets/video/video1.mp4" type="video/mp4">
+      <div class="hero-fog"></div>
 
-        </video>
+      <!-- Hero Content -->
+      <div class="relative text-center text-white z-10">
+        <h1 class="text-5xl md:text-7xl font-bold heading-font mb-6">
+          Raigad Tropical
+        </h1>
 
-        <!-- Overlay -->
-        <div class="absolute w-full h-full bg-black/50"></div>
+        <p class="text-xl md:text-2xl mb-8">
+          Experience Nature, Heritage & Serenity
+        </p>
 
-        <div class="hero-fog"></div>
+        <div class="space-x-4">
+          <a
+            href="#accommodation"
+            class="bg-yellow-500 px-6 py-3 rounded-lg text-black font-semibold hover:bg-yellow-400"
+          >
+            Explore Accommodation
+          </a>
 
-        <!-- Hero Content -->
-        <div class="relative text-center text-white z-10">
-
-            <h1 class="text-5xl md:text-7xl font-bold heading-font mb-6">
-                Raigad Tropical
-            </h1>
-
-            <p class="text-xl md:text-2xl mb-8">
-                Experience Nature, Heritage & Serenity
-            </p>
-
-            <div class="space-x-4">
-
-                <a href="#accommodation"
-                    class="bg-yellow-500 px-6 py-3 rounded-lg text-black font-semibold hover:bg-yellow-400">
-                    Explore Accommodation
-                </a>
-
-                <a href="#gallery" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black">
-                    View Gallery
-                </a>
-
-            </div>
-
+          <a
+            href="#gallery"
+            class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black"
+          >
+            View Gallery
+          </a>
         </div>
+      </div>
 
-        <div class="scroll-indicator text-white text-3xl">
-            ↓
-        </div>
-
+      <div class="scroll-indicator text-white text-3xl">↓</div>
     </section>
 
     <div id="journey" class="journey-section">
+      <div class="journey-image">
+        <img
+          src="./assets/images/resort-view.jpg"
+          alt="Raigad Tropical Resort"
+        />
+      </div>
 
-        <div class="journey-image">
-            <img src="./assets/images/resort-view.jpg" alt="Raigad Tropical Resort">
+      <div class="journey-content">
+        <div class="journey-step">
+          <h2>Welcome to the Sahyadri Mountains</h2>
         </div>
 
-        <div class="journey-content">
-
-            <div class="journey-step">
-                <h2>Welcome to the Sahyadri Mountains</h2>
-            </div>
-
-            <div class="journey-step">
-                <h2>Where Nature Meets Heritage</h2>
-            </div>
-
-            <div class="journey-step">
-                <h2>Your Escape at Raigad Tropical</h2>
-            </div>
-
+        <div class="journey-step">
+          <h2>Where Nature Meets Heritage</h2>
         </div>
 
+        <div class="journey-step">
+          <h2>Your Escape at Raigad Tropical</h2>
+        </div>
+      </div>
     </div>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-24 bg-white">
+      <div
+        class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center p-6"
+      >
+        <img
+          src="./assets/images/image1.png"
+          class="rounded-xl shadow-lg"
+          alt="about image"
+          loading="lazy"
+        />
 
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center p-6">
+        <div>
+          <h2 class="text-4xl heading-font mb-6">About Raigad Tropical</h2>
 
-            <img src="./assets/images/image1.png" class="rounded-xl shadow-lg" alt="about image" loading="lazy">
-
-            <div>
-
-                <h2 class="text-4xl heading-font mb-6">
-                    About Raigad Tropical
-                </h2>
-
-                <p class="text-lg leading-relaxed">
-                    Raigad Tropical is a nature inspired eco-resort experience located in the scenic
-                    Sahyadri mountains. Combining heritage architecture and tropical landscapes,
-                    the destination offers a peaceful retreat surrounded by nature.
-                </p>
-
-            </div>
-
+          <p class="text-lg leading-relaxed">
+            Raigad Tropical is a nature inspired eco-resort experience located
+            in the scenic Sahyadri mountains. Combining heritage architecture
+            and tropical landscapes, the destination offers a peaceful retreat
+            surrounded by nature.
+          </p>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- SERVICES -->
     <section id="services" class="py-24 bg-stone-100">
+      <div class="max-w-7xl mx-auto p-6">
+        <h2 class="text-4xl heading-font text-center mb-16">Our Experiences</h2>
 
-        <div class="max-w-7xl mx-auto p-6">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition"
+          >
+            <img src="./assets/images/image1.png" class="mb-4" loading="lazy" />
 
-            <h2 class="text-4xl heading-font text-center mb-16">
-                Our Experiences
-            </h2>
+            <h3 class="text-xl font-semibold mb-2">Fort Tours</h3>
 
-            <div class="grid md:grid-cols-4 gap-8">
+            <p>Guided tours exploring nearby historic forts.</p>
+          </div>
 
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition"
+          >
+            <img src="./assets/images/image2.png" class="mb-4" loading="lazy" />
 
-                    <img src="./assets/images/image1.png" class="mb-4" loading="lazy">
+            <h3 class="text-xl font-semibold mb-2">Nature Trails</h3>
 
-                    <h3 class="text-xl font-semibold mb-2">Fort Tours</h3>
+            <p>Walk through scenic forest and mountain trails.</p>
+          </div>
 
-                    <p>Guided tours exploring nearby historic forts.</p>
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition"
+          >
+            <img src="./assets/images/image3.png" class="mb-4" loading="lazy" />
 
-                </div>
+            <h3 class="text-xl font-semibold mb-2">Local Cuisine</h3>
 
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
+            <p>Experience authentic regional food and culture.</p>
+          </div>
 
-                    <img src="./assets/images/image2.png" class="mb-4" loading="lazy">
+          <div
+            class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition"
+          >
+            <img src="./assets/images/image5.png" class="mb-4" loading="lazy" />
 
-                    <h3 class="text-xl font-semibold mb-2">Nature Trails</h3>
+            <h3 class="text-xl font-semibold mb-2">Adventure</h3>
 
-                    <p>Walk through scenic forest and mountain trails.</p>
-
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
-
-                    <img src="./assets/images/image3.png" class="mb-4" loading="lazy">
-
-                    <h3 class="text-xl font-semibold mb-2">Local Cuisine</h3>
-
-                    <p>Experience authentic regional food and culture.</p>
-
-                </div>
-
-                <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition">
-
-                    <img src="./assets/images/image5.png" class="mb-4" loading="lazy">
-
-                    <h3 class="text-xl font-semibold mb-2">Adventure</h3>
-
-                    <p>Outdoor activities and adventure experiences.</p>
-
-                </div>
-
-            </div>
-
+            <p>Outdoor activities and adventure experiences.</p>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- ACCOMMODATION -->
     <section id="accommodation" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto p-6">
+        <h2 class="text-4xl heading-font text-center mb-16">Stay With Us</h2>
 
-        <div class="max-w-7xl mx-auto p-6">
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img src="./assets/images/image1.png" loading="lazy" />
 
-            <h2 class="text-4xl heading-font text-center mb-16">
-                Stay With Us
-            </h2>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Eco Cottage</h3>
 
-            <div class="grid md:grid-cols-3 gap-10">
-
-                <div class="rounded-xl overflow-hidden shadow-lg">
-
-                    <img src="./assets/images/image1.png" loading="lazy">
-
-                    <div class="p-6">
-
-                        <h3 class="text-xl font-semibold mb-2">
-                            Eco Cottage
-                        </h3>
-
-                        <p>Comfortable cottage surrounded by tropical greenery.</p>
-
-                    </div>
-
-                </div>
-
-                <div class="rounded-xl overflow-hidden shadow-lg">
-
-                    <img src="./assets/images/image2.png" loading="lazy">
-
-                    <div class="p-6">
-
-                        <h3 class="text-xl font-semibold mb-2">
-                            Luxury Tent
-                        </h3>
-
-                        <p>Experience glamping under the Sahyadri sky.</p>
-
-                    </div>
-
-                </div>
-
-                <div class="rounded-xl overflow-hidden shadow-lg">
-
-                    <img src="./assets/images/image3.png" loading="lazy">
-
-                    <div class="p-6">
-
-                        <h3 class="text-xl font-semibold mb-2">
-                            Family Suite
-                        </h3>
-
-                        <p>Spacious accommodation for families.</p>
-
-                    </div>
-
-                </div>
-
+              <p>Comfortable cottage surrounded by tropical greenery.</p>
             </div>
+          </div>
 
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img src="./assets/images/image2.png" loading="lazy" />
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Luxury Tent</h3>
+
+              <p>Experience glamping under the Sahyadri sky.</p>
+            </div>
+          </div>
+
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img src="./assets/images/image3.png" loading="lazy" />
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Family Suite</h3>
+
+              <p>Spacious accommodation for families.</p>
+            </div>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- GALLERY -->
     <section id="gallery" class="py-24 bg-stone-100">
+      <div class="max-w-7xl mx-auto p-6">
+        <h2 class="text-4xl heading-font text-center mb-16">Gallery</h2>
 
-        <div class="max-w-7xl mx-auto p-6">
-
-            <h2 class="text-4xl heading-font text-center mb-16">
-                Gallery
-            </h2>
-
-            <div class="gallery-masonry">
-
-                <img src="./assets/images/image1.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image2.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image3.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image5.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image1.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image2.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image3.png" class="rounded-lg gallery-img" loading="lazy">
-                <img src="./assets/images/image5.png" class="rounded-lg gallery-img" loading="lazy">
-
-            </div>
-
+        <div class="gallery-masonry">
+          <img
+            src="./assets/images/image1.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image2.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image3.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image5.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image1.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image2.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image3.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
+          <img
+            src="./assets/images/image5.png"
+            class="rounded-lg gallery-img"
+            loading="lazy"
+          />
         </div>
-
+      </div>
     </section>
-
-
 
     <section id="attractions" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto p-6">
+        <h2 class="text-4xl heading-font text-center mb-16">
+          Nearby Attractions
+        </h2>
 
-        <div class="max-w-7xl mx-auto p-6">
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="card p-6 text-center">
+            <h3 class="text-xl font-semibold mb-2">Raigad Fort</h3>
+            <p>Historic capital of the Maratha empire.</p>
+          </div>
 
-            <h2 class="text-4xl heading-font text-center mb-16">
-                Nearby Attractions
-            </h2>
+          <div class="card p-6 text-center">
+            <h3 class="text-xl font-semibold mb-2">Harihareshwar Beach</h3>
+            <p>Scenic beach temple destination.</p>
+          </div>
 
-            <div class="grid md:grid-cols-3 gap-10">
-
-                <div class="card p-6 text-center">
-                    <h3 class="text-xl font-semibold mb-2">
-                        Raigad Fort
-                    </h3>
-                    <p>Historic capital of the Maratha empire.</p>
-                </div>
-
-                <div class="card p-6 text-center">
-                    <h3 class="text-xl font-semibold mb-2">
-                        Harihareshwar Beach
-                    </h3>
-                    <p>Scenic beach temple destination.</p>
-                </div>
-
-                <div class="card p-6 text-center">
-                    <h3 class="text-xl font-semibold mb-2">
-                        Diveagar Beach
-                    </h3>
-                    <p>Peaceful coastal getaway near Raigad.</p>
-                </div>
-
-            </div>
-
+          <div class="card p-6 text-center">
+            <h3 class="text-xl font-semibold mb-2">Diveagar Beach</h3>
+            <p>Peaceful coastal getaway near Raigad.</p>
+          </div>
         </div>
-
+      </div>
     </section>
-
-
 
     <!-- CONTACT -->
     <section id="contact" class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto p-6 text-center">
+        <h2 class="text-4xl heading-font mb-10">Contact Us</h2>
 
-        <div class="max-w-4xl mx-auto p-6 text-center">
-
-            <h2 class="text-4xl heading-font mb-10">
-                Contact Us
-            </h2>
-
-            <form class="space-y-6">
+        <!-- <form class="space-y-6">
 
                 <input type="text" placeholder="Name" class="w-full p-3 border rounded-lg">
 
@@ -419,65 +474,69 @@
                     Send Message
                 </button>
 
-            </form>
-
-        </div>
-
+            </form> -->
+      </div>
     </section>
-
 
     <div class="fort-divider"></div>
 
+    <button
+      id="backToTop"
+      class="fixed bottom-24 right-8 bg-brand-gold text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 z-50"
+    >
+      <i data-lucide="arrow-up"></i>
+    </button>
+
     <!-- FOOTER -->
     <footer class="bg-black text-white py-10">
+      <div class="max-w-7xl mx-auto text-center">
+        <h3 class="heading-font text-2xl mb-4">Raigad Tropical</h3>
 
-        <div class="max-w-7xl mx-auto text-center">
-
-            <h3 class="heading-font text-2xl mb-4">
-                Raigad Tropical
-            </h3>
-
-            <p class="text-gray-400">
-                © 2026 Raigad Tropical. All rights reserved.
-            </p>
-
-        </div>
-
+        <p class="text-gray-400">
+          © 2026 Raigad Tropical. All rights reserved.
+        </p>
+      </div>
     </footer>
 
     <div id="lightbox">
+      <span class="lightbox-close">&times;</span>
 
-        <span class="lightbox-close">&times;</span>
+      <img class="lightbox-image" loading="lazy" />
 
-        <img class="lightbox-image" loading="lazy">
-
-        <div class="lightbox-nav">
-
-            <span class="lightbox-prev">&#10094;</span>
-            <span class="lightbox-next">&#10095;</span>
-
-        </div>
-
+      <div class="lightbox-nav">
+        <span class="lightbox-prev">&#10094;</span>
+        <span class="lightbox-next">&#10095;</span>
+      </div>
     </div>
 
-    <a href="https://wa.me/919820160376" target="_blank"
-        class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-message-circle">
-            <path
-                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-            </path>
-        </svg>
+    <a
+      href="https://wa.me/919820160376"
+      target="_blank"
+      class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-message-circle"
+      >
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+        ></path>
+      </svg>
     </a>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        lucide.createIcons();
+      lucide.createIcons();
     </script>
     <!-- Custom JS -->
     <script src="js/script.js"></script>
-
-</body>
-
+  </body>
 </html>
