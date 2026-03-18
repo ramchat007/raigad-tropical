@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -7,12 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
-import pb from "@/lib/pocketbaseClient";
 
 const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,48 +18,12 @@ const ContactPage = () => {
     message: "",
   });
 
-  const [settings, setSettings] = useState({
+  // Hardcoded settings since we removed PocketBase
+  const settings = {
     resort_name: "Raigad Tropical",
     phone: "8421009712",
     email: "contact@raigadtropical.in",
-  });
-
-  useEffect(() => {
-    const fetchSettings = async () => {
-      try {
-        let record;
-        try {
-          // Try fetching by 'default' ID first
-          record = await pb
-            .collection("settings")
-            .getOne("default", { $autoCancel: false });
-        } catch (err) {
-          // Fallback to getting the first available record if 'default' fails
-          const result = await pb
-            .collection("settings")
-            .getList(1, 1, { $autoCancel: false });
-          if (result.items.length > 0) {
-            record = result.items[0];
-          }
-        }
-
-        if (record) {
-          setSettings((prev) => ({
-            ...prev,
-            resort_name: record.resort_name || prev.resort_name,
-            phone: record.phone || prev.phone,
-            email: record.email || prev.email,
-          }));
-        }
-      } catch (error) {
-        console.error("Failed to fetch settings:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchSettings();
-  }, []);
+  };
 
   const whatsappLink = `https://wa.me/91${settings.phone}?text=Hi%20${encodeURIComponent(settings.resort_name)},%20I%20would%20like%20to%20inquire%20about%20booking`;
 
@@ -77,23 +39,47 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      await pb
-        .collection("contact_inquiries")
-        .create(formData, { $autoCancel: false });
-
-      toast({
-        title: "Message Sent!",
-        description:
-          "Thank you for contacting us. We will get back to you soon.",
+      // Send data to Web3Forms
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "546ed5fc-f20c-4970-b78c-e58d46260678",
+          subject: `New Website Inquiry from ${formData.name}`,
+          from_name: "Raigad Tropical Contact Form",
+          cc: "contact@raigadtropical.in",
+          replyto: formData.email,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message Sent!",
+          description:
+            "Thank you for contacting us. We will get back to you soon.",
+        });
+
+        // Clear the form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        throw new Error(data.message || "Failed to submit form");
+      }
     } catch (error) {
+      console.error(error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
@@ -105,9 +91,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div
-      className={`transition-opacity duration-500 ${loading ? "opacity-80" : "opacity-100"}`}
-    >
+    <div className="transition-opacity duration-500 opacity-100">
       <Helmet>
         <title>{`Contact Us - ${settings.resort_name} | Get in Touch`}</title>
         <meta
@@ -120,7 +104,7 @@ const ContactPage = () => {
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1651003829069-d11e7bbcb412"
+            src="/images/contact.jpg"
             alt={`Contact ${settings.resort_name} resort`}
             className="w-full h-full object-cover"
           />
@@ -131,16 +115,14 @@ const ContactPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold text-white mb-4"
-          >
+            className="text-5xl md:text-6xl font-bold text-white mb-4">
             Contact Us
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-200"
-          >
+            className="text-xl text-gray-200">
             We're here to help with your booking and inquiries
           </motion.p>
         </div>
@@ -156,8 +138,7 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-card rounded-xl p-8 shadow-lg"
-            >
+              className="bg-card rounded-xl p-8 shadow-lg">
               <h2 className="text-3xl font-bold text-foreground mb-6">
                 Send us a Message
               </h2>
@@ -229,8 +210,7 @@ const ContactPage = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-white"
-                >
+                  className="w-full bg-primary hover:bg-primary/90 text-white">
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
@@ -240,8 +220,7 @@ const ContactPage = () => {
                 <a
                   href={whatsappLink}
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
+                  rel="noopener noreferrer">
                   <Button className="w-full bg-[#25D366] hover:bg-[#20BD5A] text-white">
                     <MessageCircle className="w-4 h-4 mr-2" />
                     Quick Enquiry via WhatsApp
@@ -256,8 +235,7 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-8"
-            >
+              className="space-y-8">
               {/* Contact Details */}
               <div className="bg-card rounded-xl p-8 shadow-lg">
                 <h2 className="text-3xl font-bold text-foreground mb-6">
@@ -272,8 +250,7 @@ const ContactPage = () => {
                       </h3>
                       <a
                         href={`tel:+91${settings.phone}`}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300">
                         +91 {settings.phone}
                       </a>
                     </div>
@@ -287,8 +264,7 @@ const ContactPage = () => {
                       </h3>
                       <a
                         href={`mailto:${settings.email}`}
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
+                        className="text-muted-foreground hover:text-primary transition-colors duration-300">
                         {settings.email}
                       </a>
                     </div>
@@ -313,15 +289,14 @@ const ContactPage = () => {
               {/* Map */}
               <div className="bg-card rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4404.868819929616!2d73.192635652866!3d18.452508890565976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be817006dc73fb9%3A0xafbf9d1ca439f3df!2ssantosh%20walke%20farm!5e1!3m2!1sen!2sin!4v1773754563366!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120932.78361041045!2d73.04870196238618!3d18.441091563539864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be83a15dc211111%3A0xcda65860ec8b88d2!2sRoha%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1710123456789!5m2!1sen!2sin"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title={`${settings.resort_name} Location Map`}
-                ></iframe>
+                  title={`${settings.resort_name} Location Map`}></iframe>
               </div>
             </motion.div>
           </div>
