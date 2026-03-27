@@ -75,9 +75,9 @@ const Footer = React.forwardRef((props, ref) => {
             <h3 className="text-xl font-semibold mb-4 tracking-wide">Quick Links</h3>
             <div className="text-gray-300 space-y-2 flex flex-col">
               <Link to="/" className="hover:text-primary transition-colors w-fit">Home</Link>
-              <Link to="/accommodations" className="hover:text-primary transition-colors w-fit">Accommodations</Link>
-              <Link to="/facilities" className="hover:text-primary transition-colors w-fit">Facilities</Link>
-              <Link to="/gallery" className="hover:text-primary transition-colors w-fit">Gallery</Link>
+              {/* <Link to="/accommodations" className="hover:text-primary transition-colors w-fit">Accommodations</Link> */}
+              {/* <Link to="/facilities" className="hover:text-primary transition-colors w-fit">Facilities</Link> */}
+              {/* <Link to="/gallery" className="hover:text-primary transition-colors w-fit">Gallery</Link> */}
               <Link to="/contact" className="hover:text-primary transition-colors w-fit">Contact</Link>
             </div>
           </motion.div>
