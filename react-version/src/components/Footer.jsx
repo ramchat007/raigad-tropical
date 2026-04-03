@@ -77,7 +77,7 @@ const Footer = React.forwardRef((props, ref) => {
               <Link to="/" className="hover:text-primary transition-colors w-fit">Home</Link>
               {/* <Link to="/accommodations" className="hover:text-primary transition-colors w-fit">Accommodations</Link> */}
               {/* <Link to="/facilities" className="hover:text-primary transition-colors w-fit">Facilities</Link> */}
-              {/* <Link to="/gallery" className="hover:text-primary transition-colors w-fit">Gallery</Link> */}
+              <Link to="/gallery" className="hover:text-primary transition-colors w-fit">Gallery</Link>
               <Link to="/contact" className="hover:text-primary transition-colors w-fit">Contact</Link>
             </div>
           </motion.div>

@@ -36,14 +36,14 @@ const QUICK_LINKS = [
   {
     title: "Accommodations",
     description: "Choose from AC Rooms, Non-AC Rooms, and Cozi Houses",
-    link: "/accommodations",
+    link: "/gallery",
     image: "/images/accomodation.jpg",
     alt: "Luxurious resort rooms with mountain views",
   },
   {
     title: "Facilities",
     description: "Swimming pool, restaurant, party hall, and event spaces",
-    link: "/facilities",
+    link: "/gallery",
     image: "/images/resort-view.jpg",
     alt: "Resort swimming pool overlooking the Sahyadri mountains",
   },
@@ -216,7 +216,7 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mt-16">
-            <Link to="/accommodations">
+            <Link to="/gallery">
               <Button
                 size="lg"
                 variant="outline"

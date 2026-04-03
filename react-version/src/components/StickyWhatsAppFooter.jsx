@@ -96,12 +96,12 @@ const StickyWhatsAppFooter = () => {
                     {/* Facilities */}
                   {/* </Link> */}
                 {/* </li> */}
-                {/* <li> */}
-                  {/* <Link to="/gallery" className="text-gray-300 hover:text-primary transition-colors duration-300"> */}
-                    {/* Gallery */}
-                  {/* </Link> */}
-                {/* </li> */}
                 <li>
+                  <Link to="/gallery" className="text-gray-300 hover:text-primary transition-colors duration-300">
+                    Gallery
+                  </Link>
+                </li>
+                 <li>
                   <Link to="/contact" className="text-gray-300 hover:text-primary transition-colors duration-300">
                     Contact
                   </Link>

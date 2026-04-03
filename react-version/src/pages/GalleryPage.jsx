@@ -1,89 +1,114 @@
-import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const GalleryPage = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const categories = ['All', 'Rooms', 'Facilities', 'Events', 'Landscape'];
+  const categories = ["All", "Rooms", "Facilities", "Events", "Landscape"];
 
   const images = [
     {
-      url: 'https://images.unsplash.com/photo-1600076616965-2468b850519f',
-      alt: 'Luxurious air-conditioned hotel room with modern furnishings and elegant decor',
-      category: 'Rooms'
+      url: "/images/gallery/gallery-landscape1.jpg",
+      alt: "",
+      category: "Landscape",
     },
     {
-      url: 'https://images.unsplash.com/photo-1613688684407-cc73e44fdc74',
-      alt: 'Cozy non-air-conditioned room with natural ventilation and comfortable bedding',
-      category: 'Rooms'
+      url: "/images/gallery/gallery-landscape2.jpg",
+      alt: "",
+      category: "Landscape",
     },
     {
-      url: 'https://images.unsplash.com/photo-1601701119495-d6e39b664001',
-      alt: 'Charming independent cottage with private outdoor space and rustic design',
-      category: 'Rooms'
+      url: "/images/gallery/gallery-landscape3.jpg",
+      alt: "",
+      category: "Landscape",
     },
     {
-      url: 'https://images.unsplash.com/photo-1615880326062-f2de6eb10e46',
-      alt: 'Spacious resort room with panoramic windows and tropical garden views',
-      category: 'Rooms'
+      url: "/images/gallery/gallery-event1.jpg",
+      alt: "",
+      category: "Events",
     },
     {
-      url: 'https://images.unsplash.com/photo-1691505429513-a30e45267462',
-      alt: 'Crystal clear swimming pool surrounded by tropical landscaping and lounge chairs',
-      category: 'Facilities'
+      url: "/images/gallery/gallery-event2.jpg",
+      alt: "",
+      category: "Events",
     },
     {
-      url: 'https://images.unsplash.com/photo-1693360345552-b0272db7b41c',
-      alt: 'Elegant restaurant interior with modern dining setup and ambient lighting',
-      category: 'Facilities'
+      url: "/images/gallery/gallery-event3.jpg",
+      alt: "",
+      category: "Events",
+    },
+    
+    {
+      url: "/images/gallery/gallery-room1.jpg",
+      alt: "",
+      category: "Rooms",
     },
     {
-      url: 'https://images.unsplash.com/photo-1698934641149-93431f3bd4f7',
-      alt: 'Spacious party hall with elegant decor and modern lighting for celebrations',
-      category: 'Facilities'
+      url: "/images/gallery/gallery-room2.jpg",
+      alt: "",
+      category: "Rooms",
     },
     {
-      url: 'https://images.unsplash.com/photo-1625038032515-308ab14d10b9',
-      alt: 'Beautiful outdoor wedding venue with elegant floral decorations and romantic ambiance',
-      category: 'Events'
+      url: "/images/gallery/gallery-room3.jpg",
+      alt: "",
+      category: "Rooms",
     },
     {
-      url: 'https://images.unsplash.com/photo-1680416105281-ec213b1986f7',
-      alt: 'Professional conference room with modern presentation equipment and comfortable seating',
-      category: 'Events'
+      url: "/images/gallery/gallery-room4.jpg",
+      alt: "",
+      category: "Rooms",
     },
     {
-      url: 'https://images.unsplash.com/photo-1657340835640-8cd097332129',
-      alt: 'Stunning tropical resort landscape with palm trees and golden sunset',
-      category: 'Landscape'
+      url: "/images/gallery/gallery-room5.jpg",
+      alt: "",
+      category: "Rooms",
     },
     {
-      url: 'https://images.unsplash.com/photo-1609925428492-0dc8cdde517f',
-      alt: 'Lush tropical gardens with exotic plants and peaceful walking paths',
-      category: 'Landscape'
+      url: "/images/gallery/gallery-facilities1.jpg",
+      alt: "",
+      category: "Facilities",
+    },
+    {
+      url: "/images/gallery/gallery-facilities2.jpg",
+      alt: "",
+      category: "Facilities",
+    },
+    {
+      url: "/images/gallery/gallery-facilities3.jpg",
+      alt: "",
+      category: "Facilities",
+    },
+    {
+      url: "/images/gallery/gallery-facilities4.jpg",
+      alt: "",
+      category: "Facilities",
     }
   ];
 
-  const filteredImages = activeCategory === 'All' 
-    ? images 
-    : images.filter(img => img.category === activeCategory);
+  const filteredImages =
+    activeCategory === "All"
+      ? images
+      : images.filter((img) => img.category === activeCategory);
 
   return (
     <>
       <Helmet>
         <title>Gallery - Raigad Tropical | Resort Photos & Facilities</title>
-        <meta name="description" content="Browse our stunning photo gallery showcasing rooms, facilities, events, and the beautiful tropical landscape at Raigad Tropical resort." />
+        <meta
+          name="description"
+          content="Browse our stunning photo gallery showcasing rooms, facilities, events, and the beautiful tropical landscape at Raigad Tropical resort."
+        />
       </Helmet>
 
       {/* Hero Section */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1657340835640-8cd097332129"
+            src="/images/gallery/gallery-hero.jpg"
             alt="Resort gallery overview with tropical landscape"
             className="w-full h-full object-cover"
           />
@@ -118,11 +143,11 @@ const GalleryPage = () => {
               <Button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                variant={activeCategory === category ? 'default' : 'outline'}
+                variant={activeCategory === category ? "default" : "outline"}
                 className={`${
                   activeCategory === category
-                    ? 'bg-primary text-white'
-                    : 'border-primary text-primary hover:bg-primary hover:text-white'
+                    ? "bg-primary text-white"
+                    : "border-primary text-primary hover:bg-primary hover:text-white"
                 } transition-all duration-300`}
               >
                 {category}
@@ -155,7 +180,9 @@ const GalleryPage = () => {
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-white text-sm font-medium">{image.category}</p>
+                    <p className="text-white text-sm font-medium">
+                      {image.category}
+                    </p>
                   </div>
                 </motion.div>
               ))}
